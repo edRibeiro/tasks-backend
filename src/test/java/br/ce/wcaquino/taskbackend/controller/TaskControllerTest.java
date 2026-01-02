@@ -73,5 +73,10 @@ public class TaskControllerTest {
         controller.save(todo);
         Mockito.verify(taskRepo).save(todo);
     }
+    
+    @Test
+    public void falhandoPropositalmenteEmUMTeste() {
+    	Assert.assertFalse(true);
+	}
 }
 
