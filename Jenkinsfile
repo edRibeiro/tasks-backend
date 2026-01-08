@@ -70,6 +70,8 @@ pipeline {
         sleep(20)
         dir('functional-test') {
           bat 'mvn verify -Dskip.surefire.tests'
+        }
       }
     }
   }
+}
