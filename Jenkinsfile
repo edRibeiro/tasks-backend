@@ -1,16 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('Build Backend') {
+    // stage('Build Backend') {
+    //   steps {
+    //     bat 'mvn clean package -DskipTests=true'
+    //   }
+    // }
+    // stage('Unit Tests') {
+    //   steps {
+    //     bat 'mvn test'
+    //   }
+    // }
+    stage('Build + Tests Backend') {
       steps {
-        bat 'mvn clean package -DskipTests=true'
+        bat 'mvn clean verify'
       }
     }
-    stage('Unit Tests') {
-      steps {
-        bat 'mvn test'
-      }
-    }
+
     stage('SonarQube Analysis') {
       environment {
         SONARQUBE_SCANNER_HOME = tool 'SONAR_SCANNER'
