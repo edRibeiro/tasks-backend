@@ -21,6 +21,7 @@ pipeline {
             "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner.bat" ^
             -Dsonar.projectKey=DeployBack ^
             -Dsonar.java.binaries=target ^
+            -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml ^
             -Dsonar.exclusions=**/.mvn/**,**/target/** ^
             -Dsonar.coverage.exclusions=**/.mvn/**,**/src/test/**,**/model/**,**/*Application.java
           """
